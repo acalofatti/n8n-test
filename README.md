@@ -1,7 +1,7 @@
 
 # PersonalCreditCollectionsWorker
 
-A .NET 8 Worker Service that publishes personal credit collection events to a RabbitMQ queue.
+A .NET 8 Worker Service that publishes personal credit collection events to a RabbitMQ queue..
 
 ## ?? Overview
 
