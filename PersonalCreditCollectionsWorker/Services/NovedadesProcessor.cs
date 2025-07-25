@@ -40,6 +40,7 @@ namespace PersonalCreditCollectionsWorker.Services
             if (novedades.Count == 0)
             {
                 _logger.LogInformation("No se encontraron novedades.");
+
                 return;
             }
 
