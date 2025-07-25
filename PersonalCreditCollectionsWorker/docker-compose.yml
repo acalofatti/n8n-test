@@ -1,0 +1,38 @@
+﻿version: '3.8'
+
+services:
+  cobranzas-worker:
+    image: cobranzas-worker:${TAG:-stable}
+    container_name: cobranzas-worker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - TZ=America/Argentina/Buenos_Aires
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "150m"
+    networks:
+      - cobranzas-net
+
+networks:
+  cobranzas-net:
+    driver: bridge
+
+volumes:
+  logs:
+    driver: local

@@ -1,0 +1,29 @@
+﻿# Build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Optional: ignore launch.json if using VSCode
+.vscode/launch.json
+
+# Optional: log files
+*.log
+logs/
